@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <router-view/>
+    <!-- <router-view name="A"/>
+    <router-view name="B"/>
+    <router-view name="C"/> -->
   </div>
 </template>
 
