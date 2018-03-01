@@ -7,14 +7,23 @@ import BComponent from '@/components/B.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/hoge',
       name: 'HelloWorld',
+      children: [
+        {
+          path: 'ratta',
+          component: AComponent
+        },
+        {
+          path: 'makimaki',
+          component: BComponent
+        }
+      ],
       components: {
-        default: HelloWorld,
-        A: AComponent,
-        B: BComponent
+        default: HelloWorld
       }
     }
   ]

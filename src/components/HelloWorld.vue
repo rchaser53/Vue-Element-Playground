@@ -6,6 +6,7 @@
       <el-tab-pane class="hoge" label="Role" name="third">Role</el-tab-pane>
       <el-tab-pane class="hoge" label="Task" name="fourth">Task</el-tab-pane>
     </el-tabs>
+    <router-view />
   </div>
 </template>
 
