@@ -25,6 +25,11 @@ export default new Router({
       components: {
         default: HelloWorld
       }
-    }
+    },
+    // this is kinda 404
+    {
+      path: '/*',
+      component: BComponent
+    },
   ]
 })
