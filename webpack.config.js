@@ -1,5 +1,4 @@
 const path = require('path');
-// const config = require('../config')
 
 module.exports = {
 	entry: './src/main.ts',
@@ -10,7 +9,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.vue', '.js', '.css'],
 		alias: {
-			vue$: 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js',
+      '@': path.join(__dirname, 'src'),
 		}
 	},
 	module: {
@@ -30,7 +30,6 @@ module.exports = {
         loader: 'ts-loader',
         options: {
             appendTsSuffixTo: [/\.vue$/],
-            // transpileOnly: true
         }
     },
     {
@@ -39,7 +38,6 @@ module.exports = {
         options: {
             loaders: {
                 ts: 'ts-loader!tslint-loader?{"options":{"configFile":"tslint.json","tsConfigFile":"tsconfig.json","fix":true}}'
-                // ts: 'ts-loader'
             }
         }
     }
@@ -49,9 +47,7 @@ module.exports = {
 		historyApiFallback: {
 			rewrites: [{ from: /vee\$/, to: '/vee' }, { from: /element\$/, to: '/element' }]
 		},
-		// open: true,
 		port: 3000,
-		// openPage: 'element',
 		host: "localhost",
 	},
 	devtool: 'inline-source-map'
